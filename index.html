@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,49 +11,49 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 10px;
         }
-        
+
         .container {
             max-width: 500px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        
+
         .header {
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
             padding: 25px 20px;
             text-align: center;
         }
-        
+
         .header h1 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
+
         .header p {
             opacity: 0.9;
             font-size: 0.9rem;
         }
-        
+
         .form-container {
             padding: 25px 20px;
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
@@ -60,8 +61,9 @@
             font-weight: 500;
             font-size: 0.95rem;
         }
-        
-        .form-group input, .form-group select {
+
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 15px;
             border: 2px solid #e1e5e9;
@@ -70,23 +72,24 @@
             transition: all 0.3s ease;
             background: #f8f9fa;
         }
-        
-        .form-group input:focus, .form-group select:focus {
+
+        .form-group input:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #4facfe;
             background: white;
             box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
         }
-        
+
         .input-group {
             display: flex;
             gap: 10px;
         }
-        
-        .input-group > div {
+
+        .input-group>div {
             flex: 1;
         }
-        
+
         .btn-calculate {
             width: 100%;
             padding: 18px;
@@ -100,12 +103,12 @@
             transition: all 0.3s ease;
             margin-top: 10px;
         }
-        
+
         .btn-calculate:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
         }
-        
+
         .result-container {
             margin-top: 25px;
             padding: 20px;
@@ -113,33 +116,33 @@
             border-radius: 15px;
             display: none;
         }
-        
+
         .result-summary {
             text-align: center;
             margin-bottom: 20px;
         }
-        
+
         .result-value {
             font-size: 2rem;
             font-weight: 700;
             color: #2d3748;
             margin: 10px 0;
         }
-        
+
         .result-label {
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 5px;
         }
-        
+
         .tabs {
             display: flex;
             margin-bottom: 15px;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 10px;
             padding: 5px;
         }
-        
+
         .tab {
             flex: 1;
             padding: 10px;
@@ -150,25 +153,25 @@
             font-weight: 500;
             font-size: 0.9rem;
         }
-        
+
         .tab.active {
             background: white;
             color: #333;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .table-container {
             max-height: 400px;
             overflow-y: auto;
             border-radius: 10px;
             background: white;
         }
-        
+
         .projection-table {
             width: 100%;
             border-collapse: collapse;
         }
-        
+
         .projection-table th {
             background: #f8f9fa;
             padding: 12px 8px;
@@ -179,97 +182,116 @@
             position: sticky;
             top: 0;
         }
-        
+
         .projection-table td {
             padding: 10px 8px;
             border-bottom: 1px solid #e1e5e9;
             font-size: 0.85rem;
         }
-        
+
         .projection-table tr:hover {
             background: #f8f9fa;
         }
-        
+
         .summary-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-top: 15px;
         }
-        
+
         .summary-item {
             text-align: center;
             padding: 15px;
-            background: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
         }
-        
+
         .summary-item .value {
             font-size: 1.2rem;
             font-weight: 600;
             color: #2d3748;
         }
-        
+
         .summary-item .label {
             font-size: 0.8rem;
             color: #666;
             margin-top: 5px;
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 margin: 5px;
                 border-radius: 15px;
             }
-            
+
             .header {
                 padding: 20px 15px;
             }
-            
+
             .header h1 {
                 font-size: 1.3rem;
             }
-            
+
             .form-container {
                 padding: 20px 15px;
             }
-            
+
             .input-group {
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
             .projection-table th,
             .projection-table td {
                 padding: 8px 6px;
                 font-size: 0.8rem;
             }
-            
+
             .result-value {
                 font-size: 1.6rem;
             }
         }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <h1>💰 Calculadora de Juros Compostos</h1>
             <p>Veja como seu dinheiro cresce ao longo do tempo</p>
         </div>
-        
+
         <div class="form-container">
             <div class="form-group">
                 <label for="valorInicial">💵 Valor Inicial (R$)</label>
                 <input type="number" id="valorInicial" placeholder="Ex: 100" step="0.01" min="0">
             </div>
-            
+            <div class="form-group">
+                <label for="aporteMenusal">💸 Aporte Mensal (R$)</label>
+                <input type="number" id="aporteMenusal" placeholder="Ex: 50" step="0.01" min="0">
+            </div>
+
             <div class="input-group">
                 <div class="form-group">
                     <label for="taxaJuros">📈 Taxa de Juros (%)</label>
                     <input type="number" id="taxaJuros" placeholder="Ex: 6" step="0.01" min="0">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="periodo">⏰ Período</label>
                     <select id="periodo">
@@ -278,13 +300,13 @@
                     </select>
                 </div>
             </div>
-            
+
             <div class="input-group">
                 <div class="form-group">
                     <label for="tempoNumero">🗓️ Tempo</label>
                     <input type="number" id="tempoNumero" placeholder="Ex: 24" min="1">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="tempoUnidade">📅 Unidade</label>
                     <select id="tempoUnidade">
@@ -293,20 +315,28 @@
                     </select>
                 </div>
             </div>
-            
+
             <button class="btn-calculate" onclick="calcular()">
                 🧮 Calcular Juros Compostos
             </button>
-            
+
             <div id="resultado" class="result-container">
                 <div class="result-summary">
                     <div class="result-label">Valor Final</div>
                     <div id="valorFinal" class="result-value">R$ 0,00</div>
-                    
+
                     <div class="summary-grid">
                         <div class="summary-item">
                             <div id="valorInvestido" class="value">R$ 0,00</div>
-                            <div class="label">Valor Investido</div>
+                            <div class="label">Valor Inicial</div>
+                        </div>
+                        <div class="summary-item">
+                            <div id="totalAportes" class="value">R$ 0,00</div>
+                            <div class="label">Total Aportes</div>
+                        </div>
+                        <div class="summary-item">
+                            <div id="totalInvestido" class="value">R$ 0,00</div>
+                            <div class="label">Total Investido</div>
                         </div>
                         <div class="summary-item">
                             <div id="lucroTotal" class="value">R$ 0,00</div>
@@ -314,12 +344,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="tabs">
                     <div class="tab active" onclick="mostrarTabela('mensal')">📊 Mensal</div>
                     <div class="tab" onclick="mostrarTabela('anual')">📈 Anual</div>
                 </div>
-                
+
                 <div class="table-container">
                     <table class="projection-table">
                         <thead>
@@ -353,6 +383,7 @@
 
         function calcular() {
             const valorInicial = parseFloat(document.getElementById('valorInicial').value) || 0;
+            const aporteMenusal = parseFloat(document.getElementById('aporteMenusal').value) || 0;
             const taxaJuros = parseFloat(document.getElementById('taxaJuros').value) || 0;
             const periodo = document.getElementById('periodo').value;
             const tempoNumero = parseInt(document.getElementById('tempoNumero').value) || 0;
@@ -375,44 +406,68 @@
                 totalMeses = tempoNumero * 12;
             }
 
-            // Calcular progressão mensal
+            // Calcular progressão mensal COM aportes
             dadosCalculados.mensal = [];
             let valorAtual = valorInicial;
+            let totalAportado = 0;
 
             for (let mes = 1; mes <= totalMeses; mes++) {
+                // Adicionar aporte no início do mês (exceto no primeiro mês)
+                if (mes > 1) {
+                    valorAtual += aporteMenusal;
+                    totalAportado += aporteMenusal;
+                }
+
+                // Calcular juros sobre o valor atual
                 const jurosMes = valorAtual * taxaMensal;
                 valorAtual += jurosMes;
-                
+
                 dadosCalculados.mensal.push({
                     periodo: mes,
                     valor: valorAtual,
-                    juros: jurosMes
+                    juros: jurosMes,
+                    aporte: mes > 1 ? aporteMenusal : 0
                 });
             }
 
-            // Calcular progressão anual
+            // Calcular progressão anual COM aportes
             dadosCalculados.anual = [];
             valorAtual = valorInicial;
+            totalAportado = 0;
             const taxaAnual = Math.pow(1 + taxaMensal, 12) - 1;
 
             const totalAnos = Math.ceil(totalMeses / 12);
             for (let ano = 1; ano <= totalAnos; ano++) {
+                let valorInicioAno = valorAtual;
+
+                // Adicionar aportes do ano (12 meses ou menos no último ano)
+                const mesesNoAno = ano === totalAnos ? (totalMeses % 12 || 12) : 12;
+                const aportesAno = aporteMenusal * (mesesNoAno - (ano === 1 ? 1 : 0));
+                valorAtual += aportesAno;
+                totalAportado += aportesAno;
+
+                // Calcular juros sobre o valor médio do ano
                 const jurosAno = valorAtual * taxaAnual;
                 valorAtual += jurosAno;
-                
+
                 dadosCalculados.anual.push({
                     periodo: ano,
                     valor: valorAtual,
-                    juros: jurosAno
+                    juros: jurosAno,
+                    aporte: aportesAno
                 });
             }
 
             // Mostrar resultados
             const valorFinal = dadosCalculados.mensal[dadosCalculados.mensal.length - 1].valor;
-            const lucroTotal = valorFinal - valorInicial;
+            const totalAportes = aporteMenusal * (totalMeses - 1); // -1 porque não há aporte no primeiro mês
+            const totalInvestidoFinal = valorInicial + totalAportes;
+            const lucroTotal = valorFinal - totalInvestidoFinal;
 
             document.getElementById('valorFinal').textContent = formatarMoeda(valorFinal);
             document.getElementById('valorInvestido').textContent = formatarMoeda(valorInicial);
+            document.getElementById('totalAportes').textContent = formatarMoeda(totalAportes);
+            document.getElementById('totalInvestido').textContent = formatarMoeda(totalInvestidoFinal);
             document.getElementById('lucroTotal').textContent = formatarMoeda(lucroTotal);
 
             document.getElementById('resultado').style.display = 'block';
@@ -421,14 +476,22 @@
 
         function mostrarTabela(tipo) {
             visualizacaoAtual = tipo;
-            
+
             // Atualizar tabs
             document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
 
             const dados = dadosCalculados[tipo];
             const corpoTabela = document.getElementById('corpoTabela');
-            
+
+            // Atualizar cabeçalho da tabela
+            document.getElementById('cabecalhoTabela').innerHTML = `
+        <th>Período</th>
+        <th>Aporte</th>
+        <th>Valor</th>
+        <th>Juros</th>
+    `;
+
             // Limpar tabela
             corpoTabela.innerHTML = '';
 
@@ -436,28 +499,31 @@
             dados.forEach(item => {
                 const row = corpoTabela.insertRow();
                 const unidade = tipo === 'mensal' ? 'mês' : 'ano';
-                
+
                 row.innerHTML = `
-                    <td>${item.periodo}º ${unidade}</td>
-                    <td style="font-weight: 600; color: #2d3748;">${formatarMoeda(item.valor)}</td>
-                    <td style="color: #059669;">${formatarMoeda(item.juros)}</td>
-                `;
+            <td>${item.periodo}º ${unidade}</td>
+            <td style="color: #3b82f6;">${formatarMoeda(item.aporte || 0)}</td>
+            <td style="font-weight: 600; color: #2d3748;">${formatarMoeda(item.valor)}</td>
+            <td style="color: #059669;">${formatarMoeda(item.juros)}</td>
+        `;
             });
         }
 
         // Permitir cálculo com Enter
-        document.addEventListener('keypress', function(e) {
+        document.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 calcular();
             }
         });
 
         // Valores exemplo para demonstração
-        window.onload = function() {
+        window.onload = function () {
             document.getElementById('valorInicial').value = '100';
+            document.getElementById('aporteMenusal').value = '50';
             document.getElementById('taxaJuros').value = '6';
             document.getElementById('tempoNumero').value = '24';
         };
     </script>
 </body>
+
 </html>
